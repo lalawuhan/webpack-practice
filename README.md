@@ -99,3 +99,7 @@ Code splitting refers to an optimization technique aiming at:
 - multiple entry points : works well with smaller projects but not scalable
 - optimization.splitChunks
 - dynamic imports
+
+### Code splitting with dynamic imports
+
+- Dynamic imports load code conditionally for example, you can load some JS modules conditionally in response to user interaction like a click or a mouse move, or you can load certain code in reponse to route changes
