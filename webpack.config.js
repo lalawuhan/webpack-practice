@@ -20,6 +20,9 @@ const config = {
       },
     ],
   },
+  optimization: {
+    splitChunks: { chunks: "all" }, // we will get a vendors-main.js with moment.js, entry point has smaller size now
+  },
   plugins: [
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, "src", "index.html"),
