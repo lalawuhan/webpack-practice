@@ -63,3 +63,39 @@ If takes modern Javascript syntax as input and is able to transform it to compat
 #### Working with JS modules in webpack
 
 - Webpack makes it fun to work with ES modules, look at `src/commons/userApi.js`
+
+## Production mode
+
+- Webpack has two modes of operation: development and production
+- In dev mode, webpack takes all the JS code and loads it in the browser
+- In production mode, it applies many optimizations
+  - minfication
+  - scope hoisting
+  - sets process.env.NODE_ENV to "production"
+
+If you want to configure it in production mode, add a build script
+
+```javascript
+  "scripts": {
+    "dev": "webpack --mode development",
+    "start": "webpack-dev-server --mode development --open",
+    "build": "webpack --mode production"
+  },
+```
+
+- When you `npm run build` webpack will produce a minified bundle.
+
+## Code splitting
+
+Code splitting refers to an optimization technique aiming at:
+
+- avoiding big bundles
+- avoiding dependencies duplication
+
+* The webpack community considers 200kb the max size for initial bundle
+
+3 ways to do it
+
+- multiple entry points
+- optimization.splitChunks
+- dynamic imports
