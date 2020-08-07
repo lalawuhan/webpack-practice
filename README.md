@@ -96,6 +96,6 @@ Code splitting refers to an optimization technique aiming at:
 
 3 ways to do it
 
-- multiple entry points
+- multiple entry points : works well with smaller projects but not scalable
 - optimization.splitChunks
 - dynamic imports
