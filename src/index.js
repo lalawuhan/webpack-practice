@@ -1,6 +1,9 @@
-import "./style.css";
-import { getUsers } from "./common/usersAPI";
+import moment from "moment";
 
-console.log("Hello webpack!");
+//initial code commented out to try code splitting with moment.js
+// import "./style.css";
+// import { getUsers } from "./common/usersAPI";
 
-getUsers().then((json) => console.log(json));
+// console.log("Hello webpack!");
+
+// getUsers().then((json) => console.log(json));
