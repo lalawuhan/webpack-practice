@@ -20,7 +20,7 @@ module.exports = {
 };
 ```
 
-- Once CSS loaders are in place you can extract CSS files with [MiniCssExtractPlugin](https://webpack.js.org/plugins/mini-css-extract-plugin/).
+- Once CSS loaders are in place you can extract (put them in their own file) CSS files with [MiniCssExtractPlugin](https://webpack.js.org/plugins/mini-css-extract-plugin/)
 
 - Order of the loaders is important
 
@@ -54,11 +54,20 @@ module.exports = {
 };
 ```
 
+- The job of the css loader is to load CSS files and the job of the styl eloader is to generate and inject a style element that contains all the styles of the application
+- With this configuraton, CSS definitions are included in the main.js files of the application which means you don't need to import them in the main indexx.html file
+
+### Transpilers
+
+The process of transforming code from one form of JS to another is called transpiling. Many browsers do not support the latest fetaures that were introduced is ES6 and ES7 and for this reason the code is usually transpiled to an older version of Javascript that implements the ES5 standard.
+
 ### Working with Javascript
 
 Webpack knows nothing about transforming Javascript code. It's too lazy so it outsources the work to poor babel-loader, with babel.
 Babel is a Javascript compiler and "transpiler".
-If takes modern Javascript syntax as input and is able to transform it to compatible code that can run in (almost) any browser.
+
+- The transpilation process that is executed by Babel is defined with plugins, in practice, most developer use ready made presets that are groups of pre-configured plugins.
+- Example of one is [@babel/preset-react](https://babeljs.io/docs/en/babel-preset-react/)
 
 #### Working with JS modules in webpack
 
@@ -103,3 +112,4 @@ Code splitting refers to an optimization technique aiming at:
 ### Code splitting with dynamic imports
 
 - Dynamic imports load code conditionally for example, you can load some JS modules conditionally in response to user interaction like a click or a mouse move, or you can load certain code in reponse to route changes
+- code is in my `index.html` and `index.js`
